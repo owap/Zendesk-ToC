@@ -1,0 +1,59 @@
+<div class="container section-page">
+  <div class="container-inner">
+    <div class="row clearfix">
+      <div class="column column--sm-8">
+        {{breadcrumbs}}
+      </div>
+    </div>
+
+
+    <div class="page-header page-header--center" id="main-content">
+      <div class="section-header">
+        <div class="section-header__col section-header__col--main">
+          <h1 class="section-title">
+            {{section.name}}
+          </h1>
+
+          {{#if section.description}}
+          <p class="page-description">{{section.description}}</p>
+          {{/if}}
+        </div>
+        {{#if settings.show_follow_section}}
+          <div class="section-header__col section-header__col--button section-subscribe">
+            {{subscribe}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+
+    {{#if section.sections}}
+      <div class="section-list-wrapper">
+        <ul class="row section-list">
+          {{#each section.sections}}
+            <li class="column column column--sm-6 column--md-3 section-list-item">
+              <a class="section-list-item__link" href="{{url}}">
+                <h2 class="h5 section-list-item__title">{{name}}</h2>
+                <p class="meta">{{description}}</p>
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+        {{pagination "section.sections"}}
+      </div>
+    {{/if}}
+
+    {{#if section.articles}}
+      <ul class="article-list article-list--section">
+        {{#each section.articles}}
+          <li class="article-list-item {{#if promoted}}article-list-item--is-promoted{{/if}}" >
+            {{#if promoted}}
+              <span class="fas fa-star" title="{{t 'promoted'}}"></span>
+            {{/if}}
+            <a class="article-list-item__link" href="{{url}}">{{title}}</a>
+          </li>
+        {{/each}}
+      </ul>
+      {{pagination "section.articles"}}
+    {{/if}}
+  </div>
+</div>

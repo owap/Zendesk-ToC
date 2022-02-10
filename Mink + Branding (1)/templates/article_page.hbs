@@ -1,0 +1,300 @@
+<div class="container article-page">
+  <div class="container-inner">
+    <div class="row clearfix">
+      <div class="column column--sm-8">
+        {{breadcrumbs}}
+      </div>
+    </div>
+
+    <div class="article-container" id="main-content">
+      <div class="article-container__column article-container__sidenav">
+        <div data-sidenav='{"mobileBreakpoint": 991}'></div>
+      </div>
+      <div class="article-container__column article-container__article">
+        <article class="article clearfix" itemscope itemtype="http://schema.org/Article">
+          <header class="article-header">
+            <h1 class="article__title" itemprop="name">
+              {{#if article.internal}}
+                <span class="fas fa-lock" title="{{t 'internal'}}"> </span>
+              {{/if}}
+              {{article.title}}
+            </h1>
+
+            <div class="lt-d-sm-flex lt-justify-content-between lt-mb-4 lt-align-items-start">
+              <div class="lt-mb-2 lt-me-sm-4">
+                <div class="lt-entry-info ">
+                  {{#if settings.show_article_author}}
+                    <div class="lt-entry-info__avatar">
+                      <div
+                          class="lt-avatar {{#if article.author.agent}}lt-avatar--agent{{/if}}">
+                        <img 
+                          class="lt-user-avatar lt-user-avatar--default"
+                          src="{{article.author.avatar_url}}" alt="" />
+                      </div>
+                    </div>
+                  {{/if}}
+                  <div class="lt-entry-info__content">
+                    {{#if settings.show_article_author}}
+                      <b class="author">
+                        {{#link 'user_profile' id=article.author.id}}
+                        {{article.author.name}}
+                        {{/link}}
+                      </b>
+                    {{/if}}
+                    <div class="lt-meta">
+                      {{#is article.created_at article.edited_at}}
+                        {{date article.created_at timeago=true}}
+                      {{else}}
+                        {{t 'updated'}} {{date article.edited_at timeago=true}}
+                      {{/is}}
+                    </div>
+
+                    {{#if article.author.badges}}
+                      <div class="lt-pt-1">
+                        {{#each article.author.badges}}
+                          {{#is category_slug "titles"}}
+                            <span class="community-badge community-badge-titles" title="{{description}}"
+                                  aria-label="{{name}}">
+                              {{#if icon_url}}
+                                <img src="{{icon_url}}" alt="" />
+                              {{/if}}
+                              {{name}}
+                            </span>
+                          {{/is}}
+                        {{/each}}
+                        
+                        {{#each article.author.badges}}
+                          {{#is category_slug "achievements"}}
+                            {{#if icon_url}}
+                              <div class="community-badge community-badge-achievements">
+                                <img src="{{icon_url}}" alt="{{name}}"
+                                    title="{{name}} | {{description}}" aria-label="{{name}}" />
+                              </div>
+                            {{/if}}
+                          {{/is}}
+                        {{/each}}
+                      </div>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="lt-article-subscribe lt-d-flex lt-d-print-none lt-align-items-center">
+                {{#if settings.show_follow_article}}
+                  {{subscribe}}
+                {{/if}}
+              </div>
+            </div>
+          </header>
+
+          <div class="article__body markdown" itemprop="articleBody" data-article>
+            {{article.body}}
+          </div>
+
+          <div class="article__attachments">
+            {{#if attachments}}
+              <ul class="list-unstyled attachment-list">
+                {{#each attachments}}
+                  <li class="attachment-list__item">
+                    <span class="fas fa-paperclip attachment-list__icon"></span>
+                    <a href="{{url}}" target="_blank">{{name}}</a>
+                    <div class="meta">({{size}})</div>
+                  </li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </div>
+        </article>
+
+        <footer class="article-footer clearfix">
+          {{#with article}}
+            <div class="article-vote">
+              <span class="article-vote-question">{{t 'was_this_article_helpful'}}</span>
+              <div class="article-vote-controls">
+                {{#vote 'up' class='btn article-vote-controls__item article-vote-controls__item--up' selected_class='article-vote-controls__item--voted' role='button'}}
+                  <span class="fa fa-thumbs-up"></span>
+                {{/vote}}
+                {{#vote 'down' class='btn article-vote-controls__item article-vote-controls__item--down' selected_class='article-vote-controls__item--voted' role='button'}}
+                  <span class="fa fa-thumbs-down"></span>
+                {{/vote}}
+              </div>
+              <small class="article-vote-count">
+                {{vote 'label' class='article-vote-label'}}
+              </small>
+            </div>
+          {{/with}}
+        </footer>
+
+        {{!-- Article Comments --}}
+        {{#if settings.show_article_comments}}
+          <section class="lt-comments" itemscope itemtype="http://schema.org/UserComments" id="article-comments">
+            <header class="lt-comments__header ">
+              <h2>{{t 'comments'}}</h2>
+              <div class="lt-comment-sorter lt-mb-5 lt-d-print-none lt-d-md-flex lt-align-items-center lt-justify-content-between">
+                <div class="lt-mb-4 lt-pe-md-4">
+                  {{t 'comments_count' count=article.comment_count}}
+                </div>
+          
+                {{#if comments}}
+                  <div class="dropdown lt-mb-4">
+                    <button
+                      class="dropdown-toggle btn btn--default"
+                      aria-haspopup="true">{{t 'sort_by'}}</button>
+                    <span class="dropdown-menu dropdown-menu-end" role="menu">
+                      {{#each comment_sorters}}
+                        <a 
+                          aria-selected="{{selected}}" 
+                          href="{{url}}"
+                          role="menuitem">{{name}}</a>
+                      {{/each}}
+                    </span>
+                  </div>
+                {{/if}}
+              </div>
+            </header>
+          
+            {{#if comments}}
+              <ul class="lt-comments__list" id="comments">
+                {{#each comments}}
+                  <li class="lt-comment" id="{{anchor}}">
+                    <div class="lt-comment__inner">
+                      <div class="lt-comment__content">
+                        <div class="lt-entry-info lt-comment__header">
+                          <div class="lt-entry-info__avatar">
+                            <div class="lt-avatar {{#if author.agent}}lt-avatar--agent{{/if}}">
+                              <img class="lt-user-avatar lt-user-avatar--default" src="{{author.avatar_url}}" alt="Avatar">
+                            </div>
+                          </div>
+                          <div class="lt-entry-info__content">
+                            <b class="author">
+                              {{#link 'user_profile' id=author.id}}
+                              {{author.name}}
+                              {{/link}}
+                            </b>
+
+                            <div class="lt-meta">
+                              {{date created_at timeago=true}}
+                              {{#if editor}}
+                                ({{t 'edited'}} {{date edited_at timeago=true}})
+                              {{/if}}
+                            </div>
+
+                            {{#if author.badges}}
+                              <div class="lt-pt-1">
+                                {{#each author.badges}}
+                                  {{#is category_slug "titles"}}
+                                    <span class="community-badge community-badge-titles"
+                                          title="{{description}}" aria-label="{{name}}">
+                                      {{#if icon_url}}
+                                        <img src="{{icon_url}}" alt="" />
+                                      {{/if}}
+                                      {{name}}
+                                    </span>
+                                  {{/is}}
+                                {{/each}}
+                            
+                                {{#each author.badges}}
+                                  {{#is category_slug "achievements"}}
+                                    {{#if icon_url}}
+                                      <div class="community-badge community-badge-achievements">
+                                        <img src="{{icon_url}}" alt="{{name}}"
+                                            title="{{name}} | {{description}}" aria-label="{{name}}" />
+                                      </div>
+                                    {{/if}}
+                                  {{/is}}
+                                {{/each}}
+                              </div>
+                            {{/if}}
+                          </div>
+                        </div>
+          
+                        <div class="lt-comment__body">
+                          {{body}}
+                        </div>
+          
+                        {{#if pending}}
+                          <span
+                                class="lt-status-label lt-status-label--pending">{{t 'pending_approval'}}</span>
+                        {{/if}}
+          
+                        {{#with ticket}}
+                          <a class="lt-status-label lt-status-label--with-ticket" href="{{url}}" target="_zendesk_lotus">
+                            {{t 'request'}} {{id}}
+                          </a>
+                        {{/with}}
+                      </div>
+          
+                      <div class="lt-comment__voting-and-actions">
+                        {{#unless official}}
+                          <div class="lt-vote">
+                            {{#vote 'up' class='btn btn--default lt-vote__control lt-vote__control--up' role='button' selected_class='lt-vote__control--voted'}}
+                              <span class="fas fa-angle-up" aria-hidden="true"></span>
+                            {{/vote}}
+                            {{vote 'sum' class='lt-vote__sum'}}
+                            {{#vote 'down' class='btn btn--default lt-vote__control lt-vote__control--down' role='button' selected_class='lt-vote__control--voted'}}
+                              <span class="fas fa-angle-down" aria-hidden="true"></span>
+                            {{/vote}}
+                          </div>
+                        {{/unless}}
+                        <div class="lt-comment__actions">
+                          {{#actions}}
+                            <span class="fas fa-cog" aria-hidden="true"></span>
+                          {{/actions}}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                {{/each}}
+              </ul>
+          
+              {{pagination}}
+            {{/if}}
+          
+            <p class="lt-comments__callout lt-d-print-none">{{comment_callout}}</p>
+          
+            {{#form 'comment' class='lt-comment-form lt-d-print-none'}}
+              <div class="lt-comment-form__avatar">
+                <div class="lt-avatar avatar--comment">
+                  {{user_avatar class='lt-user-avatar lt-user-avatar--default'}}
+                </div>
+              </div>
+              <div class="lt-comment-form__body">
+                {{wysiwyg 'body'}}
+              </div>
+              <div class="lt-comment-form__controls">
+                {{input type='submit' class='btn btn--primary'}}
+              </div>
+            {{/form}}
+          </section>
+        {{/if}}
+      </div>
+      <div class="article-container__column article-container__toc">
+        <div data-toc='{"mobileBreakpoint": 991}'></div>
+      </div>
+
+      <div
+        class="article-container__column article-container__sidebar">
+        <div class="article-sidebar">
+          {{#if settings.show_articles_in_section}}
+            <section class="section-articles">
+              <h3 class="section-articles__title">{{t 'articles_in_section'}}</h3>
+              <ul class="section-articles__list">
+                {{#each section.articles}}
+                  <li class="section-articles__item">
+                    <a href="{{url}}" class="section-articles__link {{#is id ../article.id}}is-active{{/is}}">{{title}}</a>
+                  </li>
+                {{/each}}
+              </ul>
+              {{#if section.more_articles}}
+                <a href="{{section.url}}" class="btn btn--primary">{{t 'see_more'}}</a>
+              {{/if}}
+            </section>
+          {{/if}}
+          {{#if settings.show_recently_viewed_articles}}
+            {{recent_articles}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

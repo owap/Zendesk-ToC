@@ -1,0 +1,21 @@
+<div class="container new-request-page">
+  <div class="container-inner">
+    <div class="row clearfix">
+      <div class="column column--sm-8 column--sm-offset-2" id="main-content">
+        <h1 class="new-request-title">{{t 'submit_a_request'}}</h1>
+
+        {{#if parent}}
+        <p>
+          <span class="follow-up-hint">
+            {{follow_up}}
+          </span>
+        </p>
+        {{/if}}
+
+        <div class="new-request-form">
+          {{request_form wysiwyg=true}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

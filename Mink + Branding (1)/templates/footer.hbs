@@ -1,0 +1,67 @@
+</div>
+<div class="layout__footer">
+  <footer class="footer">
+    <div class="footer__wrapper container">
+      <section class="footer-submit-ticket is-hidden" data-footer-submit-ticket>
+        <h2 class="footer-submit-ticket__title">
+          {{#if settings.toggle_translations}}
+            {{dc settings.footer_cta_title}}
+          {{else}}
+            {{settings.footer_cta_title}}
+          {{/if}}
+        </h2>
+        <h4 class="footer-submit-ticket__subtitle">
+          {{#if settings.toggle_translations}}
+            {{dc settings.footer_cta_subtitle}}
+          {{else}}
+            {{settings.footer_cta_subtitle}}
+          {{/if}}
+        </h4>
+        {{link 'new_request' class='btn btn--primary footer-submit-ticket__btn'}}
+      </section>
+      <div class="container-inner footer__inner">
+        <div class="footer__col copyright">
+          <p>&copy; {{help_center.name}}</p>
+          <p>Theme by <a href="https://www.lotusthemes.com" target="_blank">Lotus Themes</a>
+          </p>
+        </div>
+        <div class="footer__col footer__col--social-links">
+          {{#if settings.toggle_facebook_icon}}
+            <a href="{{#if settings.toggle_translations}}{{dc settings.facebook_url}}{{else}}{{settings.facebook_url}}{{/if}}"
+              target="_blank" class="footer-social-link fab fa-facebook"></a>
+          {{/if}}
+          {{#if settings.toggle_twitter_icon}}
+            <a href="{{#if settings.toggle_translations}}{{dc settings.twitter_url}}{{else}}{{settings.twitter_url}}{{/if}}"
+              target="_blank" class="footer-social-link fab fa-twitter"></a>
+          {{/if}}
+          {{#if settings.toggle_youtube_icon}}
+            <a href="{{#if settings.toggle_translations}}{{dc settings.youtube_url}}{{else}}{{settings.youtube_url}}{{/if}}"
+              target="_blank" class="footer-social-link fab fa-youtube"></a>
+          {{/if}}
+          {{#if settings.toggle_linkedin_icon}}
+            <a href="{{#if settings.toggle_translations}}{{dc settings.linkedin_url}}{{else}}{{settings.linkedin_url}}{{/if}}"
+              target="_blank" class="footer-social-link fab fa-linkedin"></a>
+          {{/if}}
+          {{#if settings.toggle_instagram_icon}}
+            <a href="{{#if settings.toggle_translations}}{{dc settings.instagram_url}}{{else}}{{settings.instagram_url}}{{/if}}"
+              target="_blank" class="footer-social-link fab fa-instagram"></a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</div>
+
+{{#if settings.toggle_translations}}
+  <div hidden data-lt-i18n-dictionary>
+    <div data-lt-i18n="search_placeholder">{{dc settings.search_placeholder}}</div>
+  </div>
+
+  <script>
+    var $ltDictionary = $('[data-lt-i18n-dictionary]');
+    $('[role="search"] input[type="search"]').each(function (index, el) {
+      $(el).attr('placeholder', $ltDictionary.find('[data-lt-i18n="search_placeholder"]').html());
+    });
+  </script>
+{{/if}}

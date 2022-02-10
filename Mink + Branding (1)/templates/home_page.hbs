@@ -1,0 +1,592 @@
+<div class="container" data-home-page id="main-content">
+  <div class="container-inner">
+  {{#if settings.toggle_custom_blocks}}
+    <div class="row custom-blocks" id="custom-blocks">
+      {{#isnt settings.custom_block_1_type 'hidden'}}
+          {{#is settings.custom_block_1_type 'custom'}}
+            <a class="column column--sm-6 column--md-4 custom-block" href="{{#if settings.toggle_translations}}{{dc settings.custom_block_1_url}}{{else}}{{settings.custom_block_1_url}}{{/if}}">
+                <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_1_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_1_title}}
+                {{else}}
+                  {{settings.custom_block_1_title}}
+                {{/if}}
+              </h4> 
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_1_description}}
+                {{else}}
+                  {{settings.custom_block_1_description}}
+                {{/if}}
+              </p>
+              </div>
+            </a>
+          {{/is}}
+          {{#is settings.custom_block_1_type 'community'}}
+            {{#link 'community' class='column column--sm-6 column--md-4 custom-block'}}
+            <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_1_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_1_title}}
+                {{else}}
+                  {{settings.custom_block_1_title}}
+                {{/if}}
+              </h4> 
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_1_description}}
+                {{else}}
+                  {{settings.custom_block_1_description}}
+                {{/if}}
+              </p>
+              </div>
+            {{/link}}
+          {{/is}}
+          {{#is settings.custom_block_1_type 'submit_a_request'}}
+            {{#link 'new_request' class='column column--sm-6 column--md-4 custom-block'}}
+            <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_1_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_1_title}}
+                {{else}}
+                  {{settings.custom_block_1_title}}
+                {{/if}}
+              </h4> 
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_1_description}}
+                {{else}}
+                  {{settings.custom_block_1_description}}
+                {{/if}}
+              </p>
+              </div>
+            {{/link}}
+          {{/is}}
+      {{/isnt}}
+
+      {{#isnt settings.custom_block_2_type 'hidden'}}
+          {{#is settings.custom_block_2_type 'custom'}}
+            <a class="column column--sm-6 column--md-4 custom-block" href="{{#if settings.toggle_translations}}{{dc settings.custom_block_2_url}}{{else}}{{settings.custom_block_2_url}}{{/if}}">
+                <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_2_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_2_title}}
+                {{else}}
+                  {{settings.custom_block_2_title}}
+                {{/if}}
+              </h4> 
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_2_description}}
+                {{else}}
+                  {{settings.custom_block_2_description}}
+                {{/if}}
+              </p>
+              </div>
+            </a>
+          {{/is}}
+          {{#is settings.custom_block_2_type 'community'}}
+            {{#link 'community' class='column column--sm-6 column--md-4 custom-block'}}
+            <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_2_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_2_title}}
+                {{else}}
+                  {{settings.custom_block_2_title}}
+                {{/if}}
+              </h4> 
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_2_description}}
+                {{else}}
+                  {{settings.custom_block_2_description}}
+                {{/if}}
+              </p>
+              </div>
+            {{/link}}
+          {{/is}}
+          {{#is settings.custom_block_2_type 'submit_a_request'}}
+            {{#link 'new_request' class='column column--sm-6 column--md-4 custom-block'}}
+            <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_2_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_2_title}}
+                {{else}}
+                  {{settings.custom_block_2_title}}
+                {{/if}}
+              </h4> 
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_2_description}}
+                {{else}}
+                  {{settings.custom_block_2_description}}
+                {{/if}}
+              </p>
+              </div>
+            {{/link}}
+          {{/is}}
+      {{/isnt}}
+
+      {{#isnt settings.custom_block_3_type 'hidden'}}
+          {{#is settings.custom_block_3_type 'custom'}}
+            <a class="column column--sm-6 column--md-4 custom-block" href="{{#if settings.toggle_translations}}{{dc settings.custom_block_3_url}}{{else}}{{settings.custom_block_3_url}}{{/if}}">
+                <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_3_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_3_title}}
+                {{else}}
+                  {{settings.custom_block_3_title}}
+                {{/if}}
+              </h4> 
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_3_description}}
+                {{else}}
+                  {{settings.custom_block_3_description}}
+                {{/if}}
+              </p>
+                </div>
+            </a>
+          {{/is}}
+          {{#is settings.custom_block_3_type 'community'}}
+            {{#link 'community' class='column column--sm-6 column--md-4 custom-block'}}
+            <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_3_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_3_title}}
+                {{else}}
+                  {{settings.custom_block_3_title}}
+                {{/if}}
+              </h4> 
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_3_description}}
+                {{else}}
+                  {{settings.custom_block_3_description}}
+                {{/if}}
+              </p>
+            </div>
+            {{/link}}
+          {{/is}}
+          {{#is settings.custom_block_3_type 'submit_a_request'}}
+            {{#link 'new_request' class='column column--sm-6 column--md-4 custom-block'}}
+            <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_3_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_3_title}}
+                {{else}}
+                  {{settings.custom_block_3_title}}
+                {{/if}}
+              </h4> 
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_3_description}}
+                {{else}}
+                  {{settings.custom_block_3_description}}
+                {{/if}}
+              </p>
+              </div>
+            {{/link}}
+          {{/is}}
+      {{/isnt}}
+
+      {{#isnt settings.custom_block_4_type 'hidden'}}
+          {{#is settings.custom_block_4_type 'custom'}}
+            <a class="column column--sm-6 column--md-4 custom-block" href="{{#if settings.toggle_translations}}{{dc settings.custom_block_4_url}}{{else}}{{settings.custom_block_4_url}}{{/if}}">
+                <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_4_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_4_title}}
+                {{else}}
+                  {{settings.custom_block_4_title}}
+                {{/if}}
+              </h4>
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_4_description}}
+                {{else}}
+                  {{settings.custom_block_4_description}}
+                {{/if}}
+              </p>
+                </div>
+            </a>
+          {{/is}}
+          {{#is settings.custom_block_4_type 'community'}}
+            {{#link 'community' class='column column--sm-6 column--md-4 custom-block'}}
+            <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_4_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_4_title}}
+                {{else}}
+                  {{settings.custom_block_4_title}}
+                {{/if}}
+              </h4>
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_4_description}}
+                {{else}}
+                  {{settings.custom_block_4_description}}
+                {{/if}}
+              </p>
+            {{/link}}
+            </div>
+          {{/is}}
+          {{#is settings.custom_block_4_type 'submit_a_request'}}
+            {{#link 'new_request' class='column column--sm-6 column--md-4 custom-block'}}
+              <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_4_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_4_title}}
+                {{else}}
+                  {{settings.custom_block_4_title}}
+                {{/if}}
+              </h4>
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_4_description}}
+                {{else}}
+                  {{settings.custom_block_4_description}}
+                {{/if}}
+              </p>
+              </div>
+            {{/link}}
+          {{/is}}
+      {{/isnt}}
+
+      {{#isnt settings.custom_block_5_type 'hidden'}}
+          {{#is settings.custom_block_5_type 'custom'}}
+            <a class="column column--sm-6 column--md-4 custom-block" href="{{#if settings.toggle_translations}}{{dc settings.custom_block_5_url}}{{else}}{{settings.custom_block_5_url}}{{/if}}">
+                <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_5_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_5_title}}
+                {{else}}
+                  {{settings.custom_block_5_title}}
+                {{/if}}
+              </h4>
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_5_description}}
+                {{else}}
+                  {{settings.custom_block_5_description}}
+                {{/if}}
+              </p>
+                </div>
+            </a>
+          {{/is}}
+          {{#is settings.custom_block_5_type 'community'}}
+            {{#link 'community' class='column column--sm-6 column--md-4 custom-block'}}
+            <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_5_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_5_title}}
+                {{else}}
+                  {{settings.custom_block_5_title}}
+                {{/if}}
+              </h4>
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_5_description}}
+                {{else}}
+                  {{settings.custom_block_5_description}}
+                {{/if}}
+              </p>
+            {{/link}}
+            </div>
+          {{/is}}
+          {{#is settings.custom_block_5_type 'submit_a_request'}}
+            {{#link 'new_request' class='column column--sm-6 column--md-4 custom-block'}}
+              <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_5_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_5_title}}
+                {{else}}
+                  {{settings.custom_block_5_title}}
+                {{/if}}
+              </h4>
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_5_description}}
+                {{else}}
+                  {{settings.custom_block_5_description}}
+                {{/if}}
+              </p>
+              </div>
+            {{/link}}
+          {{/is}}
+      {{/isnt}}
+
+      {{#isnt settings.custom_block_6_type 'hidden'}}
+          {{#is settings.custom_block_6_type 'custom'}}
+            <a class="column column--sm-6 column--md-4 custom-block" href="{{#if settings.toggle_translations}}{{dc settings.custom_block_6_url}}{{else}}{{settings.custom_block_6_url}}{{/if}}">
+                <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_6_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_6_title}}
+                {{else}}
+                  {{settings.custom_block_6_title}}
+                {{/if}}
+              </h4>
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_6_description}}
+                {{else}}
+                  {{settings.custom_block_6_description}}
+                {{/if}}
+              </p>
+                </div>
+            </a>
+          {{/is}}
+          {{#is settings.custom_block_6_type 'community'}}
+            {{#link 'community' class='column column--sm-6 column--md-4 custom-block'}}
+            <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_6_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_6_title}}
+                {{else}}
+                  {{settings.custom_block_6_title}}
+                {{/if}}
+              </h4>
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_6_description}}
+                {{else}}
+                  {{settings.custom_block_6_description}}
+                {{/if}}
+              </p>
+            {{/link}}
+            </div>
+          {{/is}}
+          {{#is settings.custom_block_6_type 'submit_a_request'}}
+            {{#link 'new_request' class='column column--sm-6 column--md-4 custom-block'}}
+              <div class="custom-block__link">
+              <div class="custom-block__icon">
+                <img class="custom-block__image" src="{{settings.custom_block_6_icon}}" alt="">
+              </div>
+              <h4 class="custom-block__title">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_6_title}}
+                {{else}}
+                  {{settings.custom_block_6_title}}
+                {{/if}}
+              </h4>
+              <p class="custom-block__description">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.custom_block_6_description}}
+                {{else}}
+                  {{settings.custom_block_6_description}}
+                {{/if}}
+              </p>
+              </div>
+            {{/link}}
+          {{/is}}
+      {{/isnt}}
+    </div>
+  {{/if}}
+
+  {{#if settings.toggle_promoted_articles}}
+    <section class="promoted-articles" id="promoted-articles">
+      <h4 class="promoted-articles__title">{{t 'promoted_articles'}}</h4>
+      <ul class="promoted-articles__list row">
+        {{#each promoted_articles}}
+          <li class="promoted-articles-item column column--xs-12 column--sm-4">
+            <span class="fas fa-star" title="{{t 'promoted'}}"></span>
+            <div class="promoted-articles-item__content ">
+              <a class="promoted-articles-item__title" href="{{url}}">{{title}}</a>
+              <p class="meta">{{excerpt body characters=50}}</p>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+   </section>
+  {{/if}}
+  </div>
+</div>
+
+{{#if settings.toggle_category_list}}
+  <div class="container">
+    <div class="container-inner">
+      <div class="knowledge-base" id="category-list">
+        <h2 class="category-list-title">{{t 'knowledge_base'}}</h2>
+        <ul class="row block-list clearfix">
+          {{#each categories}}
+            {{#if ../has_multiple_categories}}
+            <li class="column column column--sm-6 column--md-3 block-list-item">
+              <a class="block-list-item__link" href="{{url}}">
+                <h2 class="h5 block-list-item__title">{{name}}</h2>
+                <p class="meta">{{description}}</p>
+              </a>
+            </li>
+            {{else}}
+              {{#each sections}}
+                <li class="column column column--sm-6 column--md-3 block-list-item">
+                  <a class="block-list-item__link" href="{{url}}">
+                    <h2 class="h5 block-list-item__title">{{name}}</h2>
+                    <p class="meta">{{description}}</p>
+                  </a>
+                </li>
+              {{/each}}
+            {{/if}}
+          {{/each}}
+        </ul>
+
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+{{#if settings.toggle_category_tree}}
+<div class="category-tree" id="category-tree">
+  
+  <div class="container">
+    <div class="container-inner">
+      <h2 class="text-center category-tree__title">
+        {{#if settings.toggle_translations}}
+          {{dc settings.category_tree_title}}
+        {{else}}
+          {{settings.category_tree_title}}
+        {{/if}}
+      </h2>
+      <div class="category-tree-item__sections row clearfix">
+        {{#each categories}}
+        
+          {{!-- Category 1: start --}}
+          {{#is id 4419041299863}}
+            <section class="column column--sm-6 column--md-4 section">
+              <h3 class="h4 section__title">
+                <a class="section__title-link" href="{{url}}">{{name}}</a>
+              </h3>
+              <ul class="article-list" data-articles-limit>
+                {{#each sections}}
+                  {{#each articles}}
+                    <li class="article-list-item {{#if promoted}}article-list-item--is-promoted{{/if}}" >
+                      {{#if promoted}}
+                        <span class="fas fa-star" title="{{t 'promoted'}}"></span>
+                      {{/if}}
+                      <a class="article-list-item__link" href="{{url}}">{{title}}</a>
+                    </li>
+                  {{/each}}
+                {{/each}}
+              </ul>
+            </section>
+          {{/is}}
+          {{!-- Category 1: end --}}
+        
+          {{!-- Category 2: start --}}
+          {{#is id 4419040445591}}
+            <section class="column column--sm-6 column--md-4 section">
+              <h3 class="h4 section__title">
+                <a class="section__title-link" href="{{url}}">{{name}}</a>
+              </h3>
+              <ul class="article-list" data-articles-limit>
+                {{#each sections}}
+                  {{#each articles}}
+                    <li class="article-list-item {{#if promoted}}article-list-item--is-promoted{{/if}}" >
+                      {{#if promoted}}
+                        <span class="fas fa-star" title="{{t 'promoted'}}"></span>
+                      {{/if}}
+                      <a class="article-list-item__link" href="{{url}}">{{title}}</a>
+                    </li>
+                  {{/each}}
+                {{/each}}
+              </ul>
+            </section>
+          {{/is}}
+          {{!-- Category 2: end --}}
+        
+          {{!-- Category 3: start --}}
+          {{#is id 360004710274}}
+            <section class="column column--sm-6 column--md-4 section">
+              <h3 class="h4 section__title">
+                <a class="section__title-link" href="{{url}}">{{name}}</a>
+              </h3>
+              <ul class="article-list" data-articles-limit>
+                {{#each sections}}
+                  {{#each articles}}
+                    <li class="article-list-item {{#if promoted}}article-list-item--is-promoted{{/if}}" >
+                      {{#if promoted}}
+                        <span class="fas fa-star" title="{{t 'promoted'}}"></span>
+                      {{/if}}
+                      <a class="article-list-item__link" href="{{url}}">{{title}}</a>
+                    </li>
+                  {{/each}}
+                {{/each}}
+              </ul>
+            </section>
+          {{/is}}
+          {{!-- Category 3: end --}}
+        
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+{{#if settings.toggle_recent_activity}}
+  <div class="container">
+    <div class="container-inner">
+      {{#if help_center.community_enabled}}
+        <section class="community-recent-activity">
+          <h2>
+            {{t 'community'}}
+          </h2>
+          {{recent_activity scope='community'}}
+        </section>
+      {{/if}}
+    </div>
+  </div>
+{{/if}}
+

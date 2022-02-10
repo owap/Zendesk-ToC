@@ -1,0 +1,55 @@
+<div class="container category-page">
+  <div class="container-inner">
+    <div class="row clearfix">
+      <div class="column column--sm-8">
+        {{breadcrumbs}}
+      </div>
+    </div>
+
+    <div class="page-header page-header--center" id="main-content">
+      <h1>{{category.name}}</h1>
+      {{#if category.description}}
+        <p class="page-description">{{category.description}}</p>
+      {{/if}}
+    </div>
+
+    {{#if sections}}
+      <div class="row section-tree clearfix" >
+        {{#each sections}}
+          <section class="column column--sm-6 column--md-4 section">
+            <h3 class="section__title">
+              <a class="section__title-link" href="{{url}}">{{name}}</a>
+            </h3>
+            <ul class="article-list">
+              {{#each sections}}
+              <li
+                  class="article-list-item ">
+                <a class="article-list-item__link" href="{{url}}">{{name}}</a>
+              </li>
+              {{/each}}
+              {{#each articles}}
+              <li class="article-list-item {{#if promoted}}article-list-item--is-promoted{{/if}}" >
+                {{#if promoted}}
+                  <span class="fas fa-star" title="{{t 'promoted'}}"></span>
+                {{/if}}
+                <a class="article-list-item__link" href="{{url}}">{{title}}</a>
+              </li>
+              {{/each}}
+            </ul>
+            {{#if more_articles}}
+              <a href="{{url}}" class="btn btn--primary see-all-articles">
+                {{t 'show_all_articles' count=article_count}}
+              </a>
+            {{/if}}
+          </section>
+        {{/each}}
+      </div>
+    {{else}}
+      <div class="column column--xs-12">
+        <p>
+          <i><a href="{{category.url}}">{{t 'empty'}}</a></i>
+        </p>
+      </div>
+    {{/if}}
+  </div>
+</div>
