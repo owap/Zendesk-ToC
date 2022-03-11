@@ -461,6 +461,11 @@
       <div class="knowledge-base" id="category-list">
         <h2 class="category-list-title">{{t 'knowledge_base'}}</h2>
         <ul class="row block-list clearfix">
+          {{#each settings.knowledge_base_articles}}
+            <li class="column column column--sm-6 column--md-3 block-list-item">
+                <h2 class="h5 block-list-item__title">{{this.label}}</h2>
+            </li>
+          {{/each}}
           {{#each categories}}
             {{#if ../has_multiple_categories}}
             <li class="column column column--sm-6 column--md-3 block-list-item">

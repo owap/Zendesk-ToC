@@ -6,6 +6,44 @@
   "default_locale": "en-us",
   "settings": [
     {
+      "identifier": "knowledge_base_articles",
+      "type": "list",
+      "description": "Font for body text",
+      "value": [
+        "documentation",
+        "faq",
+        "resellers",
+        "release_notes"
+      ],
+      "label": "Knowledge Base Articles",
+      "options": [
+        {
+          "identifier": "documentation",
+          "type": "checkbox",
+          "label": "Documentation",
+          "value": true
+        },
+        {
+          "identifier": "faq",
+          "type": "checkbox",
+          "label": "FAQ",
+          "value": true
+        },
+        {
+          "identifier": "resellers",
+          "type": "checkbox",
+          "label": "Resellers",
+          "value": true
+        },
+        {
+          "identifier": "release_notes",
+          "type": "checkbox",
+          "label": "Release Notes",
+          "value": true
+        }
+      ]
+    },
+    {
       "label": "Translations",
       "variables": [
         {
