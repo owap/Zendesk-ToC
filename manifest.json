@@ -16,7 +16,7 @@
         "release_notes"
       ],
       "label": "Knowledge Base Articles",
-      "options": [
+      "variables": [
         {
           "identifier": "documentation",
           "type": "checkbox",
